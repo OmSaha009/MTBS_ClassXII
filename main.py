@@ -23,7 +23,7 @@ def init_db():
         connection = mysql.connector.connect(
             host="localhost",
             user="root",
-            password="omsaha123",
+            password="pass78902",
         )
         if connection.is_connected():
             cursor = connection.cursor()
