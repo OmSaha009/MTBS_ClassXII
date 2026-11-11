@@ -5,6 +5,7 @@ A console-based Python + MySQL application to manage movies, shows,
 ticket bookings, cancellations and show-wise revenue reports.
 """
 import random
+import sys
 import mysql.connector
 from mysql.connector import Error
 from mysql.connector.cursor import MySQLCursor
@@ -23,7 +24,7 @@ def init_db():
         connection = mysql.connector.connect(
             host="localhost",
             user="root",
-            password="pass78902",
+            password="omsaha123",
         )
         if connection.is_connected():
             cursor = connection.cursor()
@@ -83,7 +84,7 @@ if __name__ == "__main__":
     connection, cursor = init_db()
     if connection is None or cursor is None:
         print("Failed to connect. Exiting...")
-        exit()
+        sys.exit(1)
     while True:
         try:
             choice = int(input("> Enter your choice: "))
@@ -348,3 +349,4 @@ if __name__ == "__main__":
                 break
             case _:
                 print("Invalid choice. Please choose from 1 to 9 according to the menu")
+                
